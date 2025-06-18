@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Media Agency LLC - Content Creation Experts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #ff69b4, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff69b4, #fff);
+        }
+
+        /* Header */
+        header {
+            background: #000;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff69b4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000 0%, #333 50%, #ff69b4 100%);
+            color: #fff;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #f0f0f0;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff69b4, #fff);
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #000;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-image {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ff69b4, #fff);
+            border-radius: 20px;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #ff69b4;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .team-member .role {
+            color: #ff69b4;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .team-member .location {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff69b4, #000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .email-link {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .email-link:hover {
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo gradient-text">Soul Media Agency LLC</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Soul Media Agency <span class="gradient-text">LLC</span></h1>
+            <p>Creating winning social media videos that capture attention, tell your story, and drive conversions</p>
+            <a href="#contact" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About <span class="gradient-text">Soul Media</span></h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>Welcome to Soul Media Agency LLC, where proven video formulas meet creative excellence. We specialize in high-converting social media video content that captures attention, tells compelling brand stories, and delivers powerful call-to-actions.</p>
+                    <br>
+                    <p>Our winning sales video formula has been rigorously tested and optimized on major paid advertising platforms, ensuring every video we create drives real results. With our owner actively in the trenches - creating content and running ads for his own businesses - we maintain a clear pulse on industry trends and what actually works.</p>
+                    <br>
+                    <p>From scroll-stopping 9:16 vertical videos to engaging 16:9 content, we deliver premium 1080p+ productions that combine technical excellence with battle-tested marketing psychology to maximize your ROI.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <div>🎯 Proven Sales Formula</div>
+                    <br>
+                    <div>📱 Premium Video Quality</div>
+                    <br>
+                    <div>🚀 Real-World Testing</div>
+                    <br>
+                    <div>💰 Conversion-Focused</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title fade-in">Our <span class="gradient-text">Creative Team</span></h2>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <h3>Alexander Miller</h3>
+                    <div class="role">Owner & Lead Content Creator</div>
+                    <div class="location">📍 Florida, USA</div>
+                    <p>Full-time content creator with a passion for strategic storytelling and brand development. Alexander leads the agency with vision and creativity, ensuring every project exceeds expectations.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <h3>Davion</h3>
+                    <div class="role">Gaming Content Specialist</div>
+                    <div class="location">📍 Canada</div>
+                    <p>Expert gaming content creator who brings energy and authenticity to every gaming brand partnership. Davion specializes in engaging gaming communities and building loyal audiences.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <h3>Missy & Eleanor</h3>
+                    <div class="role">Lifestyle Content Creators</div>
+                    <div class="location">📍 Maryland, USA</div>
+                    <p>Dynamic duo creating attention-grabbing lifestyle content. Missy and her awesome kid Eleanor bring genuine family moments and relatable content that resonates with diverse audiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title fade-in">Our <span class="gradient-text">Expertise</span></h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎯</div>
+                    <h3>Attention-Grabbing Videos</h3>
+                    <p>Premium 1080p+ social media videos (9:16 & 16:9) designed to stop the scroll and capture immediate attention using proven psychological triggers.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📖</div>
+                    <h3>Strategic Brand Storytelling</h3>
+                    <p>Compelling narratives that connect your brand with your audience on an emotional level, building trust and authenticity through masterful storytelling.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">💥</div>
+                    <h3>Powerful Call-to-Actions</h3>
+                    <p>Results-driven CTAs that convert viewers into customers using our battle-tested formula refined through rigorous paid advertising campaigns.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🧪</div>
+                    <h3>Proven Sales Formula</h3>
+                    <p>Our winning video formula has been tested and optimized on major paid advertising platforms, ensuring maximum ROI for your marketing investment.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📈</div>
+                    <h3>Industry Pulse & Accuracy</h3>
+                    <p>Real-world expertise from an owner actively creating content and running ads for his own businesses, guaranteeing current and effective strategies.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎬</div>
+                    <h3>Premium Video Production</h3>
+                    <p>Professional-grade social media video content optimized for all platforms, combining technical excellence with creative storytelling mastery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="fade-in">Ready to Elevate Your <span class="gradient-text">Brand?</span></h2>
+            <div class="contact-info fade-in">
+                <p>Let's discuss how Soul Media Agency can help bring your vision to life.</p>
+                <br>
+                <p>Contact us today to start your content creation journey:</p>
+                <br>
+                <a href="mailto:soulmedia.agency.fl@gmail.com" class="email-link">soulmedia.agency.fl@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Soul Media Agency LLC. All rights reserved. | Crafted with 💖 by the Soul Media Team</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.team-member').forEach(member => {
+            member.addEventListener('mouseenter', function() {
+                this.style.background = 'linear-gradient(135deg, #ff69b4, #fff)';
+                this.style.color = '#000';
+            });
+            
+            member.addEventListener('mouseleave', function() {
+                this.style.background = '#f8f8f8';
+                this.style.color = '#333';
+            });
+        });
+
+        // Email copy functionality
+        document.querySelector('.email-link').addEventListener('click', function(e) {
+            // Still allow normal mailto behavior, but also show a confirmation
+            setTimeout(() => {
+                alert('Email address copied to clipboard!\nsoulmedia.agency.fl@gmail.com');
+            }, 100);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Dynamic gradient animation for hero section
+        let gradientAngle = 135;
+        setInterval(() => {
+            gradientAngle = (gradientAngle + 0.5) % 360;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.background = `linear-gradient(${gradientAngle}deg, #000 0%, #333 50%, #ff69b4 100%)`;
+            }
+        }, 100);
+    </script>
+</body>
+</html> 
