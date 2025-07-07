@@ -134,56 +134,59 @@
 
         /* GIF Showcase Section */
         .gif-showcase {
-            padding: 60px 0;
+            padding: 40px 0;
             background: #fff;
             overflow: hidden;
+            width: 100%;
         }
 
         .gif-showcase h2 {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
             color: #000;
         }
 
-        .gif-scroll-container {
-            overflow-x: auto;
+        .gif-banner-container {
+            width: 100%;
             overflow-y: hidden;
+            overflow-x: hidden;
             padding: 20px 0;
-            margin: 0 2rem;
+            position: relative;
         }
 
-        .gif-scroll-container::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .gif-scroll-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        .gif-scroll-container::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, #ff69b4, #e91e63);
-            border-radius: 10px;
-        }
-
-        .gif-scroll-container::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, #e91e63, #ff69b4);
-        }
-
-        .gif-grid {
+        .gif-banner {
             display: flex;
-            gap: 2rem;
-            padding: 0 1rem;
-            min-width: max-content;
+            gap: 1.5rem;
+            animation: scrollLeft 30s linear infinite;
+            width: calc(200% + 1.5rem);
+        }
+
+        .gif-banner:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .gif-set {
+            display: flex;
+            gap: 1.5rem;
+            flex-shrink: 0;
         }
 
         .gif-card {
             flex: 0 0 auto;
-            width: 280px;
-            height: 498px; /* 9:16 aspect ratio */
+            width: 180px;
+            height: 320px; /* 9:16 aspect ratio */
             background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
-            border-radius: 20px;
+            border-radius: 15px;
             border: 3px solid #ff69b4;
             box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -192,21 +195,22 @@
         }
 
         .gif-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-5px) scale(1.05);
             box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
         }
 
         .gif-placeholder {
             width: 100%;
-            height: 70%;
+            height: 75%;
             background: linear-gradient(45deg, #ff69b4, #e91e63, #ff69b4);
             background-size: 200% 200%;
             animation: gradientShift 3s ease infinite;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             font-weight: bold;
             text-align: center;
             position: relative;
@@ -214,14 +218,14 @@
 
         .gif-placeholder::before {
             content: '🎬';
-            font-size: 3rem;
+            font-size: 2rem;
             display: block;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .gif-info {
-            padding: 1.5rem;
-            height: 30%;
+            padding: 1rem;
+            height: 25%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -229,14 +233,14 @@
         }
 
         .gif-creator {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: bold;
             color: #000;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .gif-type {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: #666;
             font-style: italic;
         }
@@ -519,18 +523,29 @@
                 align-items: center;
             }
 
-            .gif-grid {
+            .gif-banner {
                 gap: 1rem;
-                padding: 0 0.5rem;
             }
 
             .gif-card {
-                width: 240px;
-                height: 427px; /* Maintain 9:16 ratio */
+                width: 140px;
+                height: 249px; /* Maintain 9:16 ratio */
             }
 
-            .gif-scroll-container {
-                margin: 0 1rem;
+            .gif-placeholder::before {
+                font-size: 1.5rem;
+            }
+
+            .gif-placeholder {
+                font-size: 0.8rem;
+            }
+
+            .gif-creator {
+                font-size: 0.8rem;
+            }
+
+            .gif-type {
+                font-size: 0.7rem;
             }
 
             .services-grid {
@@ -572,10 +587,67 @@
 
     <!-- GIF Showcase Section -->
     <section class="gif-showcase">
-        <div class="container">
-            <h2 class="fade-in">See Our <span class="gradient-text">Creators</span> in Action</h2>
-            <div class="gif-scroll-container">
-                <div class="gif-grid">
+        <h2 class="fade-in">See Our <span class="gradient-text">Creators</span> in Action</h2>
+        <div class="gif-banner-container">
+            <div class="gif-banner">
+                <div class="gif-set">
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Alexander Miller</div>
+                            <div class="gif-type">Brand Storytelling</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Missy & Ellie</div>
+                            <div class="gif-type">Lifestyle Content</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Davion</div>
+                            <div class="gif-type">Gaming Content</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Alexander Miller</div>
+                            <div class="gif-type">Product Demo</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Missy & Ellie</div>
+                            <div class="gif-type">Family Moments</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Davion</div>
+                            <div class="gif-type">Gaming Reviews</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="gif-set">
                     <div class="gif-card fade-in">
                         <div class="gif-placeholder">
                             GIF Coming Soon
