@@ -181,10 +181,27 @@
         }
 
         .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
             margin-top: 3rem;
+        }
+
+        .team-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .team-row.top-row {
+            justify-content: center;
+        }
+
+        .team-row.bottom-row {
+            justify-content: center;
         }
 
         .team-member {
@@ -193,6 +210,8 @@
             border-radius: 15px;
             text-align: center;
             border: 2px solid transparent;
+            max-width: 350px;
+            flex: 0 1 auto;
         }
 
         .team-member-photo {
@@ -371,7 +390,12 @@
             }
 
             .team-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+
+            .team-row {
+                flex-direction: column;
+                align-items: center;
             }
 
             .services-grid {
@@ -439,32 +463,39 @@
         <div class="container">
             <h2 class="section-title fade-in">Our <span class="gradient-text">Creative Team</span></h2>
             <div class="team-grid">
-                <div class="team-member fade-in">
-                    <img src="images/Alex1.jpg" alt="Alexander Miller" class="team-member-photo">
-                    <h3>Alexander Miller</h3>
-                    <div class="role">Owner & Lead Content Creator</div>
-                    <div class="location">📍 Florida, USA</div>
-                    <p>Full-time content creator with a passion for strategic storytelling and brand development. Alexander leads the agency with vision and creativity, ensuring every project exceeds expectations.</p>
-                    <a href="#" class="portfolio-button">See Portfolio Now</a>
-                </div>
-                <div class="team-member fade-in">
-                    <img src="images/Davion1.jpg" alt="Davion" class="team-member-photo">
-                    <h3>Davion</h3>
-                    <div class="role">Gaming Content Specialist</div>
-                    <div class="location">📍 Canada</div>
-                    <p>Expert gaming content creator who brings energy and authenticity to every gaming brand partnership. Davion specializes in engaging gaming communities and building loyal audiences.</p>
-                    <a href="#" class="portfolio-button">See Portfolio Now</a>
-                </div>
-                <div class="team-member fade-in">
-                    <div class="team-photos">
-                        <img src="images/missy1.jpg" alt="Missy" class="team-member-photo">
-                        <img src="images/Ellie1.jpg" alt="Ellie" class="team-member-photo">
+                <!-- Top Row - Missy & Ellie Centered -->
+                <div class="team-row top-row">
+                    <div class="team-member fade-in">
+                        <div class="team-photos">
+                            <img src="images/missy1.jpg" alt="Missy" class="team-member-photo">
+                            <img src="images/Ellie1.jpg" alt="Ellie" class="team-member-photo">
+                        </div>
+                        <h3>Missy & Ellie</h3>
+                        <div class="role">Lifestyle Content Creators</div>
+                        <div class="location">📍 Maryland, USA</div>
+                        <p>Dynamic duo creating attention-grabbing lifestyle content. Missy and her awesome kid Ellie bring genuine family moments and relatable content that resonates with diverse audiences.</p>
+                        <a href="#" class="portfolio-button">See Portfolio Now</a>
                     </div>
-                    <h3>Missy & Ellie</h3>
-                    <div class="role">Lifestyle Content Creators</div>
-                    <div class="location">📍 Maryland, USA</div>
-                    <p>Dynamic duo creating attention-grabbing lifestyle content. Missy and her awesome kid Ellie bring genuine family moments and relatable content that resonates with diverse audiences.</p>
-                    <a href="#" class="portfolio-button">See Portfolio Now</a>
+                </div>
+                
+                <!-- Bottom Row - Alexander and Davion -->
+                <div class="team-row bottom-row">
+                    <div class="team-member fade-in">
+                        <img src="images/Alex1.jpg" alt="Alexander Miller" class="team-member-photo">
+                        <h3>Alexander Miller</h3>
+                        <div class="role">Owner & Lead Content Creator</div>
+                        <div class="location">📍 Florida, USA</div>
+                        <p>Full-time content creator with a passion for strategic storytelling and brand development. Alexander leads the agency with vision and creativity, ensuring every project exceeds expectations.</p>
+                        <a href="#" class="portfolio-button">See Portfolio Now</a>
+                    </div>
+                    <div class="team-member fade-in">
+                        <img src="images/Davion1.jpg" alt="Davion" class="team-member-photo">
+                        <h3>Davion</h3>
+                        <div class="role">Gaming Content Specialist</div>
+                        <div class="location">📍 Canada</div>
+                        <p>Expert gaming content creator who brings energy and authenticity to every gaming brand partnership. Davion specializes in engaging gaming communities and building loyal audiences.</p>
+                        <a href="#" class="portfolio-button">See Portfolio Now</a>
+                    </div>
                 </div>
             </div>
         </div>
