@@ -102,17 +102,23 @@
             display: inline-block;
             background: linear-gradient(45deg, #28a745, #20c997);
             color: #fff;
-            padding: 15px 30px;
+            padding: 25px 50px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 1s ease 0.4s both;
+            border: 3px solid #fff;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.5);
+            background: linear-gradient(45deg, #20c997, #28a745);
         }
 
         /* About Section */
@@ -305,6 +311,11 @@
 
             .hero h1 {
                 font-size: 2.5rem;
+            }
+
+            .cta-button {
+                padding: 20px 40px;
+                font-size: 1.2rem;
             }
 
             .about-content {
