@@ -132,6 +132,131 @@
             background: linear-gradient(45deg, #20c997, #28a745);
         }
 
+        /* JPG Showcase Section */
+        .jpg-showcase {
+            padding: 40px 0;
+            background: #fff;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .jpg-showcase h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+
+        .jpg-banner-container {
+            width: 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .jpg-banner {
+            display: flex;
+            gap: 1.5rem;
+            animation: scrollLeft 30s linear infinite;
+            width: calc(200% + 1.5rem);
+        }
+
+        .jpg-banner:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .jpg-set {
+            display: flex;
+            gap: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .jpg-card {
+            flex: 0 0 auto;
+            width: 180px;
+            height: 320px; /* 9:16 aspect ratio */
+            background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
+            border-radius: 15px;
+            border: 3px solid #ff69b4;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jpg-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+        }
+
+        .jpg-placeholder {
+            width: 100%;
+            height: 75%;
+            background: linear-gradient(45deg, #ff69b4, #e91e63, #ff69b4);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+        }
+
+        .jpg-placeholder::before {
+            content: '📸';
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .jpg-info {
+            padding: 1rem;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .jpg-creator {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 0.3rem;
+        }
+
+        .jpg-type {
+            font-size: 0.75rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         /* About Section */
         .about {
             padding: 80px 0;
@@ -398,28 +523,28 @@
                 align-items: center;
             }
 
-            .gif-banner {
+            .jpg-banner {
                 gap: 1rem;
             }
 
-            .gif-card {
+            .jpg-card {
                 width: 140px;
                 height: 249px; /* Maintain 9:16 ratio */
             }
 
-            .gif-placeholder::before {
+            .jpg-placeholder::before {
                 font-size: 1.5rem;
             }
 
-            .gif-placeholder {
+            .jpg-placeholder {
                 font-size: 0.8rem;
             }
 
-            .gif-creator {
+            .jpg-creator {
                 font-size: 0.8rem;
             }
 
-            .gif-type {
+            .jpg-type {
                 font-size: 0.7rem;
             }
 
@@ -456,6 +581,111 @@
             <h1 class="fade-in">Transform Your Brand with <span class="gradient-text-dark-bg">Soul Media</span></h1>
             <p class="fade-in">Premium social media videos that convert viewers into customers using our proven sales formula</p>
             <a href="mailto:soulmedia.agency.fl@gmail.com" class="cta-button fade-in">Get Started Today!</a>
+        </div>
+    </section>
+
+    <!-- JPG Showcase Section -->
+    <section class="jpg-showcase">
+        <div class="jpg-banner-container">
+            <div class="jpg-banner">
+                <div class="jpg-set">
+                    <div class="jpg-card fade-in">
+                        <img src="images/Alex1.jpg" alt="Alexander Miller Brand Storytelling" style="width: 100%; height: 75%; object-fit: cover; border-radius: 12px 12px 0 0;">
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Alexander Miller</div>
+                            <div class="jpg-type">Brand Storytelling</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <div class="jpg-placeholder">
+                            Screenshot Coming Soon
+                        </div>
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Missy & Ellie</div>
+                            <div class="jpg-type">Lifestyle Content</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <img src="images/Davion1.jpg" alt="Davion Gaming Content" style="width: 100%; height: 75%; object-fit: cover; border-radius: 12px 12px 0 0;">
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Davion</div>
+                            <div class="jpg-type">Gaming Content</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <div class="jpg-placeholder">
+                            Screenshot Coming Soon
+                        </div>
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Alexander Miller</div>
+                            <div class="jpg-type">Product Demo</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <img src="images/missy1.jpg" alt="Missy & Ellie Family Moments" style="width: 100%; height: 75%; object-fit: cover; border-radius: 12px 12px 0 0;">
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Missy & Ellie</div>
+                            <div class="jpg-type">Family Moments</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <img src="images/Davion2.jpg" alt="Davion Gaming Reviews" style="width: 100%; height: 75%; object-fit: cover; border-radius: 12px 12px 0 0;">
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Davion</div>
+                            <div class="jpg-type">Gaming Reviews</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="jpg-set">
+                    <div class="jpg-card fade-in">
+                        <img src="images/Alex1.jpg" alt="Alexander Miller Brand Storytelling" style="width: 100%; height: 75%; object-fit: cover; border-radius: 12px 12px 0 0;">
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Alexander Miller</div>
+                            <div class="jpg-type">Brand Storytelling</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <div class="jpg-placeholder">
+                            Screenshot Coming Soon
+                        </div>
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Missy & Ellie</div>
+                            <div class="jpg-type">Lifestyle Content</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <img src="images/Davion1.jpg" alt="Davion Gaming Content" style="width: 100%; height: 75%; object-fit: cover; border-radius: 12px 12px 0 0;">
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Davion</div>
+                            <div class="jpg-type">Gaming Content</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <div class="jpg-placeholder">
+                            Screenshot Coming Soon
+                        </div>
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Alexander Miller</div>
+                            <div class="jpg-type">Product Demo</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <img src="images/missy1.jpg" alt="Missy & Ellie Family Moments" style="width: 100%; height: 75%; object-fit: cover; border-radius: 12px 12px 0 0;">
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Missy & Ellie</div>
+                            <div class="jpg-type">Family Moments</div>
+                        </div>
+                    </div>
+                    <div class="jpg-card fade-in">
+                        <img src="images/Davion2.jpg" alt="Davion Gaming Reviews" style="width: 100%; height: 75%; object-fit: cover; border-radius: 12px 12px 0 0;">
+                        <div class="jpg-info">
+                            <div class="jpg-creator">Davion</div>
+                            <div class="jpg-type">Gaming Reviews</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
