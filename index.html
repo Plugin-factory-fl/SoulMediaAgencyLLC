@@ -192,14 +192,7 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid transparent;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-color: #ff69b4;
         }
 
         .team-member-photo {
@@ -239,6 +232,28 @@
             color: #666;
             font-style: italic;
             margin-bottom: 1rem;
+        }
+
+        .portfolio-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff69b4, #e91e63);
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .portfolio-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(45deg, #e91e63, #ff69b4);
         }
 
         /* Services Section */
@@ -430,6 +445,7 @@
                     <div class="role">Owner & Lead Content Creator</div>
                     <div class="location">📍 Florida, USA</div>
                     <p>Full-time content creator with a passion for strategic storytelling and brand development. Alexander leads the agency with vision and creativity, ensuring every project exceeds expectations.</p>
+                    <a href="#" class="portfolio-button">See Portfolio Now</a>
                 </div>
                 <div class="team-member fade-in">
                     <img src="images/Davion1.jpg" alt="Davion" class="team-member-photo">
@@ -437,6 +453,7 @@
                     <div class="role">Gaming Content Specialist</div>
                     <div class="location">📍 Canada</div>
                     <p>Expert gaming content creator who brings energy and authenticity to every gaming brand partnership. Davion specializes in engaging gaming communities and building loyal audiences.</p>
+                    <a href="#" class="portfolio-button">See Portfolio Now</a>
                 </div>
                 <div class="team-member fade-in">
                     <div class="team-photos">
@@ -447,6 +464,7 @@
                     <div class="role">Lifestyle Content Creators</div>
                     <div class="location">📍 Maryland, USA</div>
                     <p>Dynamic duo creating attention-grabbing lifestyle content. Missy and her awesome kid Ellie bring genuine family moments and relatable content that resonates with diverse audiences.</p>
+                    <a href="#" class="portfolio-button">See Portfolio Now</a>
                 </div>
             </div>
         </div>
@@ -547,17 +565,7 @@
         });
 
         // Add some interactive hover effects
-        document.querySelectorAll('.team-member').forEach(member => {
-            member.addEventListener('mouseenter', function() {
-                this.style.background = 'linear-gradient(135deg, #ff69b4, #fff)';
-                this.style.color = '#000';
-            });
-            
-            member.addEventListener('mouseleave', function() {
-                this.style.background = '#f8f8f8';
-                this.style.color = '#333';
-            });
-        });
+        // Removed team member hover effects
 
         // Email copy functionality
         const emailLinks = document.querySelectorAll('.email-link');
