@@ -410,6 +410,7 @@
                     <p>Full-time content creator with a passion for strategic storytelling and brand development. Alexander leads the agency with vision and creativity, ensuring every project exceeds expectations.</p>
                 </div>
                 <div class="team-member fade-in">
+                    <img src="images/Davion1.jpg" alt="Davion" class="team-member-photo">
                     <h3>Davion</h3>
                     <div class="role">Gaming Content Specialist</div>
                     <div class="location">📍 Canada</div>
@@ -534,11 +535,14 @@
         });
 
         // Email copy functionality
-        document.querySelector('.email-link').addEventListener('click', function(e) {
-            // Still allow normal mailto behavior, but also show a confirmation
-            setTimeout(() => {
-                alert('Email address copied to clipboard!\nsoulmedia.agency.fl@gmail.com');
-            }, 100);
+        const emailLinks = document.querySelectorAll('.email-link');
+        emailLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Still allow normal mailto behavior, but also show a confirmation
+                setTimeout(() => {
+                    alert('Email address copied to clipboard!\nsoulmedia.agency.fl@gmail.com');
+                }, 100);
+            });
         });
 
         // Add loading animation
