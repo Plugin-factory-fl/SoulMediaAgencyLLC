@@ -196,10 +196,20 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 1.5rem;
-            display: block;
+            margin: 0 0.5rem 1.5rem;
             border: 4px solid #ff69b4;
             box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+        }
+
+        .team-photos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-photos .team-member-photo {
+            margin-bottom: 0;
         }
 
         .team-member h3 {
@@ -416,7 +426,10 @@
                     <p>Expert gaming content creator who brings energy and authenticity to every gaming brand partnership. Davion specializes in engaging gaming communities and building loyal audiences.</p>
                 </div>
                 <div class="team-member fade-in">
-                    <img src="images/missy1.jpg" alt="Missy" class="team-member-photo">
+                    <div class="team-photos">
+                        <img src="images/missy1.jpg" alt="Missy" class="team-member-photo">
+                        <img src="images/Ellie1.jpg" alt="Eleanor" class="team-member-photo">
+                    </div>
                     <h3>Missy & Eleanor</h3>
                     <div class="role">Lifestyle Content Creators</div>
                     <div class="location">📍 Maryland, USA</div>
