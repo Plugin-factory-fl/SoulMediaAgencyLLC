@@ -132,6 +132,127 @@
             background: linear-gradient(45deg, #20c997, #28a745);
         }
 
+        /* GIF Showcase Section */
+        .gif-showcase {
+            padding: 60px 0;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .gif-showcase h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #000;
+        }
+
+        .gif-scroll-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 20px 0;
+            margin: 0 2rem;
+        }
+
+        .gif-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gif-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .gif-scroll-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #ff69b4, #e91e63);
+            border-radius: 10px;
+        }
+
+        .gif-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #e91e63, #ff69b4);
+        }
+
+        .gif-grid {
+            display: flex;
+            gap: 2rem;
+            padding: 0 1rem;
+            min-width: max-content;
+        }
+
+        .gif-card {
+            flex: 0 0 auto;
+            width: 280px;
+            height: 498px; /* 9:16 aspect ratio */
+            background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
+            border-radius: 20px;
+            border: 3px solid #ff69b4;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gif-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+        }
+
+        .gif-placeholder {
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(45deg, #ff69b4, #e91e63, #ff69b4);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+        }
+
+        .gif-placeholder::before {
+            content: '🎬';
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .gif-info {
+            padding: 1.5rem;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .gif-creator {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+
+        .gif-type {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         /* About Section */
         .about {
             padding: 80px 0;
@@ -398,6 +519,20 @@
                 align-items: center;
             }
 
+            .gif-grid {
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            .gif-card {
+                width: 240px;
+                height: 427px; /* Maintain 9:16 ratio */
+            }
+
+            .gif-scroll-container {
+                margin: 0 1rem;
+            }
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -432,6 +567,71 @@
             <h1>Soul Media Agency <span class="gradient-text-dark-bg">LLC</span></h1>
             <p>Creating winning social media videos that capture attention, tell your story, and drive conversions</p>
             <a href="mailto:soulmedia.agency.fl@gmail.com" class="cta-button">Contact Us Now!</a>
+        </div>
+    </section>
+
+    <!-- GIF Showcase Section -->
+    <section class="gif-showcase">
+        <div class="container">
+            <h2 class="fade-in">See Our <span class="gradient-text">Creators</span> in Action</h2>
+            <div class="gif-scroll-container">
+                <div class="gif-grid">
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Alexander Miller</div>
+                            <div class="gif-type">Brand Storytelling</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Missy & Ellie</div>
+                            <div class="gif-type">Lifestyle Content</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Davion</div>
+                            <div class="gif-type">Gaming Content</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Alexander Miller</div>
+                            <div class="gif-type">Product Demo</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Missy & Ellie</div>
+                            <div class="gif-type">Family Moments</div>
+                        </div>
+                    </div>
+                    <div class="gif-card fade-in">
+                        <div class="gif-placeholder">
+                            GIF Coming Soon
+                        </div>
+                        <div class="gif-info">
+                            <div class="gif-creator">Davion</div>
+                            <div class="gif-type">Gaming Reviews</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
